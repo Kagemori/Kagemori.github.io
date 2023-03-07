@@ -1,4 +1,4 @@
-*{
+/* *{
 	box-sizing: border-box;
 	margin:0;
 	padding:0;
@@ -16,13 +16,13 @@ body{
 	grid-template-columns: repeat(4, 1fr);
 }
 
-header, footer, section, aside, nav{
+.header, .footer, .section, .aside{
 	background-color: rgb(5, 65, 20);
 	color:white;
 	padding:20px;
 }
 
-header{
+.header{
 	grid-area: header;
 	background-color: #002D0B;
 	color:#fff;
@@ -30,7 +30,10 @@ header{
 	grid-row: 1;
 }
 
-nav{
+.nav{
+	background-color: rgb(5, 65, 20);
+	color:white;
+	padding:20px;
 	grid-area: nav;
 	background-color:#333;
 	color:#fff;
@@ -39,7 +42,7 @@ nav{
 	justify-items: right;
 }
 
-section{
+.section{
 	grid-area: section;
 	grid-column: 1/4;
 	grid-row: 2;
@@ -48,7 +51,7 @@ section{
 	border-radius: 20px;
 }
 
-aside{
+.aside{
 	grid-area: sidebar;
 	grid-column: 4;
 	grid-row: 2;
@@ -57,7 +60,7 @@ aside{
 	border-radius: 20px;
 }
 
-footer {
+.footer {
 	grid-area: footer;
 	grid-column: 1/5;
 	grid-row: 3 ;
@@ -66,18 +69,18 @@ footer {
 	border-radius: 20px;
 }
 
-ul{
+.ul{
 	display:flex;
 	list-style: none;
 	justify-content: end;
 }
 
-li{
+.li{
 	display:inline;
 	padding-right:15px;
 }
 
-a{
+.a{
 	color:#fff;
 	text-decoration: none;
 	font-size: 25px;
@@ -128,11 +131,11 @@ a{
 		grid-template-columns: 1fr;
 	}
 
-	header{
+	.header{
 		line-height: 50px;
 	}
 
-	ul{
+	.ul{
 		flex-direction: column;
 		line-height: 45px;
 	}
@@ -155,4 +158,111 @@ a{
 	#bio__img{
 		width: 7em;
 	}
+} */
+/* The above is for reference to the old version only, replaced CSS to handle Grid and Flexbox with using React */
+
+
+
+/* Reset Margin and Padding */
+*{
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
+}
+
+/* CSS for Body */
+body{
+	background-color: #4b4b4b;
+	color:#555;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height:30px;
+
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+/* CSS For Header and Navigation Bar */
+#top-header-navigation{
+	grid-column: 1/5;
+	grid-row: 1;
+}
+
+#root{
+	grid-column: 1/5;
+	grid-row: 2;
+}
+
+#footer-copy{
+	grid-column: 1/5;
+	grid-row: 3 ;
+	line-height: 10px;
+	justify-self: center;
+}
+
+.nav{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #002D0B;
+	color:#fff;
+}
+
+.nav h1{
+	padding: 20px;
+	padding-left: 60px;
+}
+
+.nav-items{
+	list-style: none;
+	display: flex;
+	background-color: rgb(5, 65, 20);
+	padding: 20px;
+}
+
+.nav-items li{
+	display:inline;
+}
+
+.nav-items a{
+	color:#fff;
+	text-decoration: none;
+	font-size: 25px;
+	font-weight: bold;
+	padding: 20px;
+}
+
+/* Main Content */
+#index {
+	display: flex;
+}
+
+.section{
+	background-color: rgb(5, 65, 20);
+	color:white;
+	padding:20px;
+	line-height:25px;
+	margin:10px;
+	border-radius: 20px;
+}
+
+/* Side Content */
+.aside{
+	background-color: rgb(5, 65, 20);
+	color:white;
+	padding:20px;
+	grid-area: sidebar;
+	grid-column: 4;
+	grid-row: 2;
+	line-height:25px;
+	margin:10px;
+	border-radius: 20px;
+}
+
+/* Footer */
+.footer {
+	background-color: rgb(5, 65, 20);
+	color:white;
+	padding:20px;
+	border-radius: 20px;
 }
