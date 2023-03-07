@@ -1,0 +1,38 @@
+function ResumeFile(){
+    return (
+        <section id="resume-file">
+		    <iframe src="files/Keith_Estrella_Resume.pdf" width="800px" height="1025px" frameborder="0"></iframe>
+	    </section>
+    )
+}
+
+function ResumeBio(){
+    return (
+        <section id="resume-bio">
+            <img src="files/images/ItMe.png" id="bio__img" alt="Bio Image Here" width="200" />
+            <h2>About Me</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	    </section>
+    )
+}
+
+function Page(){
+    return (
+        <div id="resume-section">
+            <ResumeFile />
+            <ResumeBio />
+        </div>
+    )
+}
+
+ReactDOM.render(<Page />, document.getElementById("root"))
