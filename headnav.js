@@ -5,11 +5,11 @@ function Navigation(){
                 <nav className="nav">
                     <h1>Keith's Personal Github Website</h1>
                     <ul className="nav-items">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="school_projects.html">School Projects</a></li>
-                        <li><a href="./personal_projects/personal_projects.html">Personal Projects</a></li>
-                        <li><a href="resume.html">Resume</a></li>
-                        <li><a href="Blog">Blog</a></li>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/school_projects.html">School Projects</a></li>
+                        <li><a href="/personal_projects/personal_projects.html">Personal Projects</a></li>
+                        <li><a href="/resume.html">Resume</a></li>
+                        <li><a href="#">Blog</a></li>
                     </ul>
                 </nav>
             </header>
