@@ -7,7 +7,7 @@ function Navigation(){
                     <ul className="nav-items">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="school_projects.html">School Projects</a></li>
-                        <li><a href="personal_projects.html">Personal Projects</a></li>
+                        <li><a href="./personal_projects/personal_projects.html">Personal Projects</a></li>
                         <li><a href="resume.html">Resume</a></li>
                         <li><a href="Blog">Blog</a></li>
                     </ul>
