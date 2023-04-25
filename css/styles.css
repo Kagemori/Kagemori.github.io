@@ -176,6 +176,8 @@ body{
 	background-image: url("https://www.finalfantasyforums.net/attachments/ffxiv_amaurot_01-png.10179/");
  	background-repeat: no-repeat;
   	background-size: auto;
+	background-attachment: fixed;
+	background-size: cover;
 	color:#555;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 16px;
@@ -240,7 +242,7 @@ body{
 	display: flex;
 }
 
-.section{
+#section{
 	background-color: rgb(5, 65, 20);
 	color:white;
 	padding:20px;
@@ -249,8 +251,13 @@ body{
 	border-radius: 20px;
 }
 
+#section a, #section a:visited{
+	text-decoration: none;
+	color:rgb(56, 165, 255);
+}
+
 /* Side Content */
-.aside{
+#aside{
 	background-color: rgb(5, 65, 20);
 	color:white;
 	padding:20px;
@@ -310,11 +317,10 @@ body{
 	padding:2px;
 }
 
-#schoolproj a, #schoolproj a:visited{
-	text-decoration: none;
-	color:rgb(56, 165, 255);
-}
-
+/* 
+	When browser width (or on mobile) is at or below 1024px, stack the navbar links so it's not bleeding into one another
+	Note: when broswer is really small it still bleeds into another
+*/
 @media(max-width:1024px){
 	.container{
 		grid-template-columns: 1fr;
