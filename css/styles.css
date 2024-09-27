@@ -249,6 +249,7 @@ body{
 	line-height:25px;
 	margin:10px;
 	border-radius: 20px;
+	flex: 2;
 }
 
 #section a, #section a:visited{
@@ -261,12 +262,10 @@ body{
 	background-color: rgb(5, 65, 20);
 	color:white;
 	padding:20px;
-	grid-area: sidebar;
-	grid-column: 4;
-	grid-row: 2;
 	line-height:25px;
 	margin:10px;
 	border-radius: 20px;
+	flex: 1;
 }
 
 /* Footer */
@@ -335,6 +334,10 @@ body{
 		line-height: 45px;
 	}
 
+	#index{
+		flex-direction: column;
+	}
+	
 	#resume-file{
 		float:unset;
 		width:auto;
