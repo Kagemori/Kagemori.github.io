@@ -216,6 +216,7 @@ body{
 .nav h1{
 	padding: 20px;
 	padding-left: 60px;
+	flex: 1.5;
 }
 
 .nav-items{
@@ -223,10 +224,14 @@ body{
 	display: flex;
 	background-color: rgb(5, 65, 20);
 	padding: 20px;
+	flex: 2;
 }
 
 .nav-items li{
 	display:inline;
+	flex: 1;
+	flex-basis: auto;
+	text-align: right;
 }
 
 .nav-items a{
@@ -337,7 +342,7 @@ body{
 	#index{
 		flex-direction: column;
 	}
-	
+
 	#resume-file{
 		float:unset;
 		width:auto;
