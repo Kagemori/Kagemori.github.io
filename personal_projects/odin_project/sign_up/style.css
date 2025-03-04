@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    display: flex;
+}
+
+#background{
+    background-image: url('./images/crime.png');
+    background-size: cover;
+    background-position: center;
+    width: 30vw;
+    height: 100vh;
+}
+
+#logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+#logo-img{
+    width: 100px;
+    height: 100px;
+}
+
+#logo-name{
+    color: azure;
+    font-size: 80px;
+}
+
+
+#form-background{
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    height: 100vh;
+    justify-content: center;
+    background-color: antiquewhite;
+}
+
+#form-header{
+    padding: 50px;
+    width: 40vw;
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    box-shadow: 5px 5px 10px rgba(0,0,0, 0.3);
+}
+
+#form h2{
+    padding: 20px 50px;
+}
+
+form{
+    display: flex;
+    width: 40vw;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.form-input{
+    display: flex;
+    width: 15vw;
+    flex-direction: column;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.form-input input{
+    height: 30px;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px 5px;
+}
+
+
+.form-input input:focus{
+    border: 2px solid rgb(10, 189, 202);
+    box-shadow: 5px 5px 10px rgba(0,0,0, 0.3);
+}
+
+.form-input input:valid{
+    border: 2px solid green;
+}
+
+.form-input input:invalid{
+    border: 2px solid red;
+}
+
+#form-submit{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: first baseline;
+}
+
+#form-submit input{
+    width: 200px;
+    padding: 10px 20px;
+    margin-left: 50px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    background-color: #596D48;
+    color: white;
+    border-radius: 5px 5px;
+}
+
+#form-submit a{
+    text-decoration: none;
+}
