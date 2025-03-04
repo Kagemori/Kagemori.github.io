@@ -1,0 +1,45 @@
+<html>
+    <p>From a separate file, this code calls to a MySQL table to collect and format client information.</p>
+
+    <br> <br> <br>
+    <h3>C++ code</h3>
+    <textarea style="width: 80%; height: 75%;" readonly>
+        #include &lt;iostream&gt;
+            #include &lt;string.h&gt;
+            #include &lt;stdlib.h&gt;
+            using namespace std;
+            
+            const string ENV[ 10 ] = {            
+               "HTTP_ACCEPT_LANGUAGE", "HTTP_CONNECTION",         
+               "HTTP_HOST", "HTTP_USER_AGENT",            
+               "QUERY_STRING", "REMOTE_ADDR", "REMOTE_PORT",      
+               "REQUEST_METHOD", "REQUEST_URI", "HTTP_REFERER" }; 
+            
+            int main() {
+                cout &lt;&lt; "Content-type:text/html\r\n\r\n";
+                cout &lt;&lt; "&lt;html&gt;\n";
+                cout &lt;&lt; "&lt;head&gt;\n";
+                cout &lt;&lt; "&lt;title&gt;CGI Environment Variables&lt;/title&gt;\n";
+                cout &lt;&lt; "&lt;/head&gt;\n";
+                cout &lt;&lt; "&lt;body&gt;\n";
+                cout &lt;&lt; "&lt;table border = \"0\" cellspacing = \"2\"&gt;";
+                
+                for ( int i = 0; i &lt; 10; i++ ) {
+                  cout &lt;&lt; "&lt;tr&gt;&lt;td&gt;" &lt;&lt; ENV[ i ] &lt;&lt; "&lt;/td&gt;&lt;td&gt;";
+                  
+                  char *value = getenv( ENV[ i ].c_str() );  
+                  if ( value != 0 ) {
+                     cout &lt;&lt; value;                                 
+                  } else {
+                     cout &lt;&lt; "Environment variable does not exist.";
+                  }
+                  cout &lt;&lt; "&lt;/td&gt;&lt;/tr&gt;\n";
+               }
+                
+                cout &lt;&lt; "&lt;/table&gt;\n";
+                cout &lt;&lt; "&lt;/body&gt;\n";
+                cout &lt;&lt; "&lt;/html&gt;\n";
+                return 0;
+            }
+    </textarea>
+</html>

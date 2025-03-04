@@ -1,0 +1,278 @@
+<html>
+<body>
+   <form enctype = "multipart/form-data" action = "../cgi-bin/project3" method = "post">
+   
+   <h3>
+   Part I - Web Page
+   </h3>
+   
+   <p>
+	<label for = "username">User name:</label>
+	<input type = "text" name = "username" id ="username" required/>
+	<label for = "gender">Sex:</label>
+	<input type = "radio" name = "gender" id = "M" value = "M" required/>
+	<label for = "M">M</label>
+	<input type = "radio" name = "gender" id = "F" value = "F" required/>
+	<label for = "F">F</label>
+   </p>
+   
+   <p>
+	<label for = "age">Age:</label>
+	<input type = "text" name = "age" id = "age" required/>
+	<label for = "gpa">GPA:</label> 
+	<input type = "text" name = "gpa" id = "gpa" required/>
+	<label for = "birthday">Birthday:</label> 
+	<input type="date" id="birthday" name="birthday">
+   </p>
+   
+	<p>
+	Interests: 
+	<input type="checkbox" id="interest1" name="interest1" value="Biking">
+	<label for="vehicle1"> Biking</label>
+	<input type="checkbox" id="interest2" name="interest2" value="Reading">
+	<label for="vehicle2"> Reading</label>
+	<input type="checkbox" id="interest3" name="interest3" value="Fishing">
+	<label for="vehicle3"> Fishing</label>
+	<input type="checkbox" id="interest4" name="interest4" value="Swimming">
+	<label for="vehicle3"> Swimming</label>
+	</p>
+	
+	<p>
+	<label for = "term">Select term:</label>
+	<select id="term" required name="term">
+	<option value = ""></option>
+    <option value="2020S">2020 Spring</option>
+    <option value="2020S1">2020 Summer 1</option>
+    <option value="2020S2">2020 Summer 2</option>
+    <option value="2020F">2020 Fall</option>
+	</select>
+	</p>
+	
+	<p>
+	<label for = "txtbox">Paste the first object text data here:</label><br>
+	<textarea name = "txtbox" id="txtbox" rows="7" cols="14" required></textarea>
+	</p>
+	
+	<h3>
+	Part II - File Upload
+	</h3>
+	
+	<label for = "objfile">2nd object text data file:</label>
+	<input type = "file" name = "objfile" id ="objfile" required/>
+	<br>	<br>
+   <input type = "submit" value = "Submit" name="submit" required/>
+   </form>
+
+   <br><br><br>
+
+   <h3>Runs the following C++ code upon Upload</h3>
+   <textarea style="width: 80%; height: 75%;" readonly>
+    #include &lt;iostream&gt;
+        #include &lt;vector&gt;  
+        #include &lt;string&gt;  
+        #include &lt;ctime&gt;
+        #include &lt;stdio.h&gt;  
+        #include &lt;stdlib.h&gt; 
+        
+        #include &lt;cgicc/CgiDefs.h&gt; 
+        #include &lt;cgicc/Cgicc.h&gt; 
+        #include &lt;cgicc/HTTPHTMLHeader.h&gt; 
+        #include &lt;cgicc/HTMLClasses.h&gt;  
+        
+        using namespace std;
+        using namespace cgicc;
+        
+        //Object for each pattern found
+        struct textObject {
+            int id;
+            int size;
+            int centerX;
+            int centerY;
+        };
+        
+        //This works but only if C++ can support multidimensional arrays without the use of global variables
+        /*void searchObj(int xpos, int ypos, int width, int height, textObject * obj, int check, char *arr){
+            char current;
+            char id = obj-&gt;id;
+            for(int y = ypos; ypos &lt; height; y++){
+                for(int x = xpos; xpos &lt; width; x++){
+                    current = arr[x][y];
+                    if(current == 'T' && check == 0){
+                        //change current element to object id
+                        arr[x][y] = obj-&gt;id;
+                        //increase its size by one
+                        obj-&gt;size = obj-&gt;size+1;
+                        
+                        //search the right, if it doesnt find any, return here
+                        searchObj( x+1, y, width, height, obj, 1, arr);
+                        //search down, if it doesnt find any, return here
+                        searchObj( x, y+1, width, height, obj, 1, arr);
+                        //search the left, if it doesnt find any, return here
+                        searchObj( x-1, y, width, height, obj, 1, arr);
+                        //search up, if it doesnt find any, return here
+                        searchObj( x, y+1, width, height, obj, 1, arr);
+                    }
+                    
+                    if(current == 'T' && check == 1){
+                        //change current element to object id
+                        arr[x][y] =obj-&gt;id;
+                        //increase its size by one
+                        obj-&gt;size = obj-&gt;size+1;
+                        
+                        //search the right, if it doesnt find any, return here
+                        searchObj( x+1, y, width, height, obj, 1, arr);
+                        //search down, if it doesnt find any, return here
+                        searchObj( x, y+1, width, height, obj, 1, arr);
+                        //search the left, if it doesnt find any, return here
+                        searchObj( x-1, y, width, height, obj, 1, arr);
+                        //search up, if it doesnt find any, return here
+                        searchObj( x, y+1, width, height, obj, 1, arr);
+                    }
+                    
+                    if(current != 'T' && check == 1){
+                        //return to previous recursion
+                        break;
+                    }
+                    
+                    if(obj-&gt;size &gt;= 0){
+                        break;
+                    }
+                }
+                if(obj-&gt;size &gt;= 0){
+                    break;
+                }
+            }
+        }*/
+        
+        int main () {
+           Cgicc formData;
+           
+           //Convert form input to variables
+           const_form_iterator fi = formData.getElement("username");
+           string name = **fi;
+           fi = formData.getElement("gender");
+           string gender = **fi;
+           fi = formData.getElement("age");
+           int age = stoi(**fi);
+           fi = formData.getElement("gpa");
+           double gpa = stoi(**fi);
+           fi = formData.getElement("birthday");
+           string birthday = **fi;   
+           string interests[4];
+           fi = formData.getElement("interest1");
+           interests[0] = **fi;
+           fi = formData.getElement("interest2");
+           interests[1] = **fi;
+           fi = formData.getElement("interest3");
+           interests[2] = **fi;
+           fi = formData.getElement("interest4");
+           interests[3] = **fi;
+           fi = formData.getElement("term");
+           string term = **fi;
+           fi = formData.getElement("txtbox");
+           string textbox = (*fi).getStrippedValue();
+           
+           int count = 0;  
+           for (int i = 0; textbox[i]; i++) {
+               if (textbox[i] != ' ') {
+                    textbox[count++] = textbox[i];
+                }
+            }
+            textbox[count] = '\0'; 
+           
+           char a, b, c;
+           int x,y,iter,yh,xw;
+           iter = 3;
+           a = textbox.at(0);
+           b = textbox.at(2);
+           x = b - 48;
+           y = a - 48;
+           char arrText[x][y];
+           
+           for(yh = 0; yh &lt; y; yh++){
+                for(xw = 0; xw &lt; x; xw++){
+                    arrText[xw][yh] = textbox.at(iter);
+                    iter++;
+                }
+            } 
+           
+           //Additional variable information
+           //Current date and time
+           time_t now = time(0);
+           char* dt = ctime(&now);
+           
+           //User-Information
+           string ENV[4] = {"HTTP_HOST", "REMOTE_ADDR", "REMOTE_PORT","HTTP_USER_AGENT"};
+           char* userInfo[4];
+           for(int i = 0; i &lt; 4; i++){
+               userInfo[i] = getenv(ENV[i].c_str());
+           }
+           
+           //
+           
+           //Debugging / Checking variables
+           ofstream output("../CPS3525/upload/project3out.html");
+           output &lt;&lt; "&lt;html&gt;\n";
+           output &lt;&lt; "&lt;head&gt;\n";
+           output &lt;&lt; "&lt;title&gt;Project 3 Output&lt;/title&gt;\n";
+           output &lt;&lt; "&lt;/head&gt;\n";
+           output &lt;&lt; "&lt;body&gt;\n";
+           output &lt;&lt; "Current Date: " &lt;&lt; dt &lt;&lt; endl;
+           output &lt;&lt; "&lt;br/&gt;\n";
+           output &lt;&lt; "User Information - Host Name: " &lt;&lt; userInfo[0] &lt;&lt; " IP Address: " &lt;&lt; userInfo[1] &lt;&lt; " Port: " &lt;&lt; userInfo[2] &lt;&lt; " Browser: " &lt;&lt; userInfo[3] &lt;&lt; endl;
+           output &lt;&lt; "&lt;br/&gt;\n";
+           output &lt;&lt; "Name: " &lt;&lt; name &lt;&lt; endl;
+           output &lt;&lt; "&lt;br/&gt;\n";
+           output &lt;&lt; "Gender: " &lt;&lt; gender &lt;&lt; endl;
+           output &lt;&lt; "&lt;br/&gt;\n";
+           output &lt;&lt; "Age: " &lt;&lt; age &lt;&lt; endl;
+           output &lt;&lt; "&lt;br/&gt;\n";
+           output &lt;&lt; "GPA: " &lt;&lt; gpa &lt;&lt; endl;
+           output &lt;&lt; "&lt;br/&gt;\n";
+           output &lt;&lt; "Birthday: " &lt;&lt; birthday &lt;&lt; endl;
+           output &lt;&lt; "&lt;br/&gt;\n";
+           output &lt;&lt; "Interests: " &lt;&lt; endl;
+           output &lt;&lt; "&lt;br/&gt;\n";
+           for(int in = 0; in &lt; 4; in++){
+               if(interests[in] != ""){
+                   output &lt;&lt; " - "&lt;&lt; interests[in] &lt;&lt; endl;
+                   output &lt;&lt; "&lt;br/&gt;\n";
+               }
+           }
+           output &lt;&lt; "Term: " &lt;&lt; term &lt;&lt; endl;
+           output &lt;&lt; "&lt;br/&gt;\n";
+           output &lt;&lt; "&lt;br/&gt;\n";
+           for(yh = 0; yh &lt; y; yh++){
+                for(xw = 0; xw &lt; x; xw++){
+                    output &lt;&lt; arrText[xw][yh];
+                }
+                output &lt;&lt; "&lt;br/&gt;\n";
+            } 
+           
+           /*textObject obj1;
+           searchObj( 0, 0, b, a, &obj1, 0, *arrText);
+           output &lt;&lt; obj1.id &lt;&lt; " " &lt;&lt; obj1.size;
+           
+           output &lt;&lt; "&lt;br/&gt;\n";*/
+           output &lt;&lt; "&lt;/body&gt;\n";
+           output &lt;&lt; "&lt;/html&gt;\n";
+           
+           //Output Link
+           cout &lt;&lt; "Content-type:text/html\r\n\r\n";
+           cout &lt;&lt; "&lt;html&gt;\n";
+           cout &lt;&lt; "&lt;head&gt;\n";
+           cout &lt;&lt; "&lt;title&gt;Project 3&lt;/title&gt;\n";
+           cout &lt;&lt; "&lt;/head&gt;\n";
+           cout &lt;&lt; "&lt;body&gt;\n";
+           cout &lt;&lt; "Form submitted successfully";
+           cout &lt;&lt; "&lt;br/&gt;\n";
+           cout &lt;&lt; "&lt;a href=../CPS3525/upload/project3out.html&gt;Link to output here&lt;/a&gt;";
+           cout &lt;&lt; "&lt;/body&gt;\n";
+           cout &lt;&lt; "&lt;/html&gt;\n";
+           
+           return 0;
+        }
+   </textarea>
+
+   </body>
+</html>

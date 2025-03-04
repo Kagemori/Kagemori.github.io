@@ -1,0 +1,34 @@
+<html>
+<body>
+<form enctype = "multipart/form-data"
+action = "../cgi-bin/run_linux_cmd.py" method = "post">
+<p>File: <input type = "file" name = "filename" /></p>
+<p><input type = "submit" value = "Upload" /></p>
+</form>
+
+<br><br><br>
+
+<h3>Runs the following Python code upon Uploading</h3>
+<textarea style="width: 80%; height: 75%;" readonly>
+    #!/usr/bin/env python
+import cgi, os
+import cgitb; cgitb.enable()
+form = cgi.FieldStorage()
+print "Content-type: text/html\n\n" # must have for HTML header
+fileitem = form['filename'] # Get filename here.
+if fileitem.filename: # Test if the file was uploaded
+    # strip leading path from file name to avoid directory traversal attacks
+    fn = os.path.basename(fileitem.filename)
+    # fn = os.path.basename(fileitem.filename.replace("\\", "/" )) # for Unix/Linux
+    open('/tmp/' + fn, 'wb').write(fileitem.file.read())
+    message = 'The file "' + fn + '" was uploaded successfully'
+else:
+    message = 'No file was uploaded'
+print """\
+&lt;html&gt;
+&lt;body&gt; &lt;p&gt;%s&lt;/p&gt; &lt;/body&gt;
+&lt;/html&gt;
+""" % (message,)
+</textarea>
+</body>
+</html>
