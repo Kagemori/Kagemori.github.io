@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odin Admin Dashboard</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../odin-main.html">RETURN HOME</a>
+    <div id="container">
+        <div id="sidebar">
+            <div id="dashboard">
+                <ul>
+                    <li><img src="./images/view-dashboard.svg" alt="">Dashboard</li>
+                </ul>
+            </div>
+            
+            <div id="sidebar-nav">
+                <ul>
+                    <li><img src="./images/home.svg" alt="">Home</li>
+                    <li><img src="./images/card-account-details-outline.svg" alt="">Profile</li>
+                    <li><img src="./images/message.svg" alt="">Messages</li>
+                    <li><img src="./images/clock-time-three.svg" alt="">History</li>
+                    <li><img src="./images/note-multiple.svg" alt="">Tasks</li>
+                    <li><img src="./images/account-group.svg" alt="">Communities</li>
+                </ul>
+            </div>
+
+            <div id="sidebar-settings">
+                <ul>
+                    <li><img src="./images/cog.svg" alt="">Settings</li>
+                    <li><img src="./images/help-box.svg" alt="">Support</li>
+                    <li><img src="./images/shield-check.svg" alt="">Privacy</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="header">
+            <div id="searchbar">
+                <img src="./images/magnify.svg" alt=""><input type="text">
+            </div>
+
+            <div id="noti-account">
+                <button class="notification">
+                    <img src="./images/bell-ring.svg" alt="">
+                </button>
+                <div class="account">
+                    <img src="./images/profile.jpg" alt="">
+                    <div class="name">Keith Estrella</div>
+                </div>
+            </div>
+
+            <div id="account-welcome">
+                <img src="./images/profile.jpg" alt="">
+                <div class="welcome-text">
+                    <div class="welcome">Hi there, </div>
+                    <div class="name">Keith Estrella (@Kagemori)</div>
+                </div>
+            </div>
+
+            <div id="project-options">
+                <button>New</button>
+                <button>Upload</button>
+                <button>Share</button>
+            </div>
+        </div>
+
+        <div id="main-body">
+            <div id="projects">
+                <div class="main-body-titles">
+                    Your Projects
+                </div>
+                <div id="project-card-holder">
+                    <div class="project-card">
+                        <div class="project-title">DPS V2</div>
+                        <div class="project-desc">A damage per second program to keep track of your dps. Especially useful in games where dps matters like VRChat.</div>
+                        <div class="project-options">
+                            <button><img src="./images/star-plus-outline.svg" alt=""></button>
+                            <button><img src="./images/eye-plus-outline.svg" alt=""></button>
+                            <button><img src="./images/source-fork.svg" alt=""></button>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-title">Pineapple Generator</div>
+                        <div class="project-desc">Application to allow for the duplication of Ananas comosus. Create a pineapplely empire with just a single click!</div>
+                        <div class="project-options">
+                            <button><img src="./images/star-plus-outline.svg" alt=""></button>
+                            <button><img src="./images/eye-plus-outline.svg" alt=""></button>
+                            <button><img src="./images/source-fork.svg" alt=""></button>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-title">Mango Extractor</div>
+                        <div class="project-desc">Program to extract mango content from literally anywhere! Careful! May cuase your system to crash if used improperly.</div>
+                        <div class="project-options">
+                            <button><img src="./images/star-plus-outline.svg" alt=""></button>
+                            <button><img src="./images/eye-plus-outline.svg" alt=""></button>
+                            <button><img src="./images/source-fork.svg" alt=""></button>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-title">Snake Biter</div>
+                        <div class="project-desc">Ever wanted to bite like a snake? Well now you can! With this application you can bite those unsuspecting programs!</div>
+                        <div class="project-options">
+                            <button><img src="./images/star-plus-outline.svg" alt=""></button>
+                            <button><img src="./images/eye-plus-outline.svg" alt=""></button>
+                            <button><img src="./images/source-fork.svg" alt=""></button>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-title">Lorem Ipsum</div>
+                        <div class="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita at minima dolorum, sed laudantium animi nisi saepe consequuntur.</div>
+                        <div class="project-options">
+                            <button><img src="./images/star-plus-outline.svg" alt=""></button>
+                            <button><img src="./images/eye-plus-outline.svg" alt=""></button>
+                            <button><img src="./images/source-fork.svg" alt=""></button>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-title">Snake</div>
+                        <div class="project-desc">Like as in the simple game project. Yeah I kinda ran out of filler ideas... Hey you can stop reading this. D:</div>
+                        <div class="project-options">
+                            <button><img src="./images/star-plus-outline.svg" alt=""></button>
+                            <button><img src="./images/eye-plus-outline.svg" alt=""></button>
+                            <button><img src="./images/source-fork.svg" alt=""></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="announcements">
+                <div class="main-body-titles">
+                    Announcements
+                </div>
+                <div id="announcements-holder">
+                    <div class="announcement-card">
+                        <div class="announcement-title">Site Maintenence</div>
+                        <div class="announcement-desc">Site will go down for maintencne after an incident regarding mangoes and pineapples proliferating in our servers.</div>
+                    </div>
+                    <div class="announcement-card">
+                        <div class="announcement-title">Extended Warranty</div>
+                        <div class="announcement-desc">We're giving you a final courtesy call to extend your car's extended warranty.</div>
+                    </div>
+                    <div class="announcement-card">
+                        <div class="announcement-title">EULA And Privacy Update</div>
+                        <div class="announcement-desc">We've updated our privacy policy and EULA please click here to view them.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="trending">
+                <div class="main-body-titles">
+                    Trending
+                </div>
+                <div id="trending-holder">
+                    <div class="trending-card">
+                        <img src="./images/derpypfp.gif" alt="">
+                        <div class="handle">
+                            <div class="trending-handle">@flutteronderpy</div>
+                            <div class="trending-name">Flutter on Derpy</div>
+                        </div>
+                    </div>
+                    <div class="trending-card">
+                        <img src="./images/wracpfp.png" alt="">
+                        <div class="handle">
+                            <div class="trending-handle">@xivarst</div>
+                            <div class="trending-name">Wrac Wulf</div>
+                        </div>
+                    </div>
+                    <div class="trending-card">
+                        <img src="./images/crosbypfp.png" alt="">
+                        <div class="handle">
+                            <div class="trending-handle">@lemonscentedfox</div>
+                            <div class="trending-name">Crosby</div>
+                        </div>
+                    </div>
+                    <div class="trending-card">
+                        <img src="./images/wamipfp.png" alt="">
+                        <div class="handle">
+                            <div class="trending-handle">@himboar</div>
+                            <div class="trending-name">Wami Lara</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
