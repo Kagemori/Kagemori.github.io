@@ -20,7 +20,7 @@ function Navigation(){
 function Footer(){
     return (
         <footer className="footer">
-		    <p>Copyright 2023 &copy; Keith's Website</p>
+		    <p>Copyright 2025 &copy; Keith's Website</p>
 	    </footer>
     )
 }
