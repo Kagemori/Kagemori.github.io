@@ -19,22 +19,26 @@ body{
 	line-height:30px;
 
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 13vh 1fr 5vh;
 }
 
 /* CSS For Header and Navigation Bar */
 #top-header-navigation{
-	grid-column: 1/5;
 	grid-row: 1;
+
+	display: grid;
+	grid-template-columns: 1fr 1.25fr;
+	grid-template-rows: 1fr;
+
+	align-items: stretch;
+	text-align: center;
 }
 
 #root{
-	grid-column: 1/5;
 	grid-row: 2;
 }
 
 #footer-copy{
-	grid-column: 1/5;
 	grid-row: 3 ;
 	line-height: 10px;
 	justify-self: center;
@@ -49,7 +53,7 @@ body{
 }
 
 .nav h1{
-	padding: 20px;
+	padding: 4vh;
 	padding-left: 60px;
 	flex: 1.5;
 }
@@ -58,28 +62,27 @@ body{
 	list-style: none;
 	display: flex;
 	background-color: rgb(5, 65, 20);
-	padding: 20px;
 	flex: 2;
+	padding: 4vh;
+	align-items: center;
+	gap: 50px;
 }
 
 .nav-items li{
 	display:inline;
 	flex: 1;
 	flex-basis: auto;
-	text-align: right;
-}
-
-.nav-items a{
+	text-align: center;
 	color:#fff;
 	text-decoration: none;
 	font-size: 25px;
 	font-weight: bold;
-	margin: 20px;
 	transition: text-shadow 0.3s ease;
 	display: inline;
+	cursor: pointer;
 }
 
-.nav-items a:hover{
+.nav-items li:hover{
 	text-shadow: 0px 0px 10px orange;
 }
 
@@ -165,11 +168,16 @@ body{
 	padding:2px;
 }
 
+.current-active-link {
+	color: black;
+	text-shadow: 0px 0px 10px lightblue;
+}
+
 /* 
 	When browser width (or on mobile) is at or below 1024px, stack the navbar links so it's not bleeding into one another
 	Note: when broswer is really small it still bleeds into another
 */
-@media(max-width:1024px){
+@media (max-width:1024px){
 	.container{
 		grid-template-columns: 1fr;
 	}
@@ -178,9 +186,21 @@ body{
 		line-height: 50px;
 	}
 
-	.ul{
+	body {
+		grid-template-rows: 26vh 1fr 5vh;
+	}
+
+	ul{
 		flex-direction: column;
-		line-height: 45px;
+		align-items: end;
+	}
+
+	.nav-items li{
+		margin: 1px;
+	}
+
+	ul li{
+		width: fit-content;
 	}
 
 	#section {
@@ -213,5 +233,6 @@ body{
 	.nav-items{
 		justify-content: start;
 		flex-direction: column;
+		gap: 0px;
 	}
 }
