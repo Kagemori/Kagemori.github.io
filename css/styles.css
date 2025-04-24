@@ -19,12 +19,15 @@ body{
 	line-height:30px;
 
 	display: grid;
-	grid-template-rows: 13vh 1fr 5vh;
+	grid-template-rows: 10.3vh 1fr 5vh;
+	grid-template-columns: 1fr;
 }
 
 /* CSS For Header and Navigation Bar */
 #top-header-navigation{
 	grid-row: 1;
+	grid-column: 1;
+	width:100%;
 
 	display: grid;
 	grid-template-columns: 1fr 1.25fr;
@@ -32,16 +35,21 @@ body{
 
 	align-items: stretch;
 	text-align: center;
-}
 
-#root{
-	grid-row: 2;
+	position: fixed;
+	z-index: 100;
 }
 
 #footer-copy{
 	grid-row: 3 ;
 	line-height: 10px;
 	justify-self: center;
+	align-self: center;
+
+	background-color: rgb(5, 65, 20);
+	color: white;
+	padding: 15px;
+	border-radius: 10px;
 }
 
 .nav{
@@ -86,153 +94,84 @@ body{
 	text-shadow: 0px 0px 10px orange;
 }
 
-/* Main Content */
-#index {
+#root {
+	grid-row: 2;
+	/* height: 84vh;
+	margin-top: 10vh; */
+}
+
+/* Body Text */
+#root-home, #root-school, #root-personal, #root-resume, #root-blog {
 	display: grid;
+
 	grid-template-columns: repeat(5,1fr);
+	grid-template-rows: 1fr;
 }
 
-#section{
+#home-section, #school-section, #personal-section {
 	background-color: rgb(5, 65, 20);
-	color:white;
-	padding:20px;
-	line-height:25px;
-	margin:10px;
+	color: white;
+
+	margin: 20px;
+	padding: 20px;
 	border-radius: 20px;
-	grid-column: 2 / 4;
+
 	align-self: start;
+	
+	grid-column: 2/4;
 }
 
-#section a, #section a:visited{
-	text-decoration: none;
-	color:rgb(56, 165, 255);
-}
-
-/* Side Content */
-#aside{
+#blog-section {
 	background-color: rgb(5, 65, 20);
-	color:white;
-	padding:20px;
-	line-height:25px;
-	margin:10px;
-	border-radius: 20px;
-	grid-column: 4 / 5;
-	align-self: start;
-}
-
-/* Footer */
-.footer {
-	background-color: rgb(5, 65, 20);
-	color:white;
-	padding:20px;
-	border-radius: 20px;
-}
-
-/* Resume Page CSS */
-#resume-file{
-	display: flex;
-	float:left;
-	width:60%;
-	padding:8px;
-	margin:10px;
-	align-items: center;
-	justify-content: center;
-}
-
-#resume-bio{
-	display:flex;
-	flex-direction: column;
-	position:fixed;
-	top: 90px;
-	right:50px;
-	float:right;
-	width:40%;
-	padding:20px;
-	background:#333;
-	color:#fff;
-	border-radius: 20px;
-}
-
-#resume-bio h2{
+	color: white;
+	font-size: 50px;
 	text-align: center;
+
+	margin: 20px;
+	padding: 20px;
+	border-radius: 20px;
+
+	align-self: start;
+	
+	grid-column: 2/5;
 }
 
-#resume-bio img{
-	display: block;
-	margin:auto;
+#resume-file {
+	background-color: rgb(5, 65, 20);
+	color: white;
+
+	margin: 20px;
+	padding: 20px;
+	border-radius: 20px;
+
+	align-self: start;
+	
+	grid-column: 1/4;
 }
 
-#bio__img{
-	width:11em;
-	border-radius: 50%;
-	padding:2px;
+#resume-bio {
+	background-color: rgb(5, 65, 20);
+	color: white;
+
+	margin: 20px;
+	padding: 20px;
+	border-radius: 20px;
+
+	align-self: start;
+
+	grid-column: 4/6;
 }
 
-.current-active-link {
-	color: black;
-	text-shadow: 0px 0px 10px lightblue;
+#home-aside, #school-aside, #personal-aside {
+	background-color: rgb(5, 65, 20);
+	color: white;
+
+	margin: 20px;
+	padding: 20px;
+	border-radius: 20px;
+
+	align-self: start;
+
+	grid-column: 4/5;
 }
 
-/* 
-	When browser width (or on mobile) is at or below 1024px, stack the navbar links so it's not bleeding into one another
-	Note: when broswer is really small it still bleeds into another
-*/
-@media (max-width:1024px){
-	.container{
-		grid-template-columns: 1fr;
-	}
-
-	.header{
-		line-height: 50px;
-	}
-
-	body {
-		grid-template-rows: 26vh 1fr 5vh;
-	}
-
-	ul{
-		flex-direction: column;
-		align-items: end;
-	}
-
-	.nav-items li{
-		margin: 1px;
-	}
-
-	ul li{
-		width: fit-content;
-	}
-
-	#section {
-		grid-column: 1 / 4;
-	}
-
-	#aside {
-		grid-column: 4 / 6;
-	}
-
-	#resume-file{
-		float:unset;
-		width:auto;
-		grid-column:1/5;
-		grid-row:2;
-	}
-
-	#resume-bio{
-		position: unset;
-		float:unset;
-		width:auto;
-		grid-column: 1/5;
-		grid-row:3;
-	}
-
-	#bio__img{
-		width: 7em;
-	}
-
-	.nav-items{
-		justify-content: start;
-		flex-direction: column;
-		gap: 0px;
-	}
-}
