@@ -12,7 +12,7 @@ function Navigation(){
     listDiv.appendChild(addListLink("School Projects"));
     listDiv.appendChild(addListLink("Personal Projects"));
     listDiv.appendChild(addListLink("Resume"));
-    listDiv.appendChild(addListLink("Blog"));
+    listDiv.appendChild(addListLink("For Fun"));
 
     h1Div.textContent = `Keith's Personal Github Website`;
 

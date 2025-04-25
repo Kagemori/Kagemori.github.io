@@ -28,7 +28,7 @@ function linkListeners(){
                 case "Resume":
                     url = "/resume.html";
                     break;
-                case "Blog":
+                case "For Fun":
                     url = "/blog.html";
                     break;
             }
@@ -64,7 +64,7 @@ function linkListeners(){
                         case "Resume":
                             newContent = tempDiv.querySelector("#root-resume");
                             break;
-                        case "Blog":
+                        case "For Fun":
                             newContent = tempDiv.querySelector("#root-blog");
                             break;
                     }
