@@ -98,6 +98,8 @@ body{
 	grid-row: 2;
 	/* height: 84vh;
 	margin-top: 10vh; */
+
+	transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 /* Body Text */
@@ -106,6 +108,11 @@ body{
 
 	grid-template-columns: repeat(5,1fr);
 	grid-template-rows: 1fr;
+}
+
+#home-section a, #school-section a, #personal-section a, #resume-section a, #blog-section a {
+	text-decoration: none;
+	color:rgb(56,165,255);
 }
 
 #home-section, #school-section, #personal-section {
@@ -175,3 +182,15 @@ body{
 	grid-column: 4/5;
 }
 
+.stagger-fade {
+	opacity: 0;
+	transform: translateY(10px);
+	animation: fadeInUp 0.4s ease forwards;
+}
+
+@keyframes fadeInUp {
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

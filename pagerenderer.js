@@ -13,6 +13,7 @@ function linkListeners(){
         link.addEventListener('click', e => {
             e.preventDefault();
             let url = link.textContent;
+            let url2 = link.textContent;
     
             switch(url){
                 case "Home":
@@ -41,8 +42,47 @@ function linkListeners(){
             fetch(url)
                 .then(response => response.text())
                 .then(html => {
+                    // const container = document.querySelector('#root');
+                    // container.innerHTML = html;
+
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = html;
+
                     const container = document.querySelector('#root');
-                    container.innerHTML = html;
+                    let newContent = "";
+
+                    switch(url2){
+                        case "Home":
+                            newContent = tempDiv.querySelector("#root-home");
+                            break;
+                        case "School Projects":
+                            newContent = tempDiv.querySelector("#root-school");
+                            break;
+                        case "Personal Projects":
+                            newContent = tempDiv.querySelector("#root-personal");
+                            break;
+                        case "Resume":
+                            newContent = tempDiv.querySelector("#root-resume");
+                            break;
+                        case "Blog":
+                            newContent = tempDiv.querySelector("#root-blog");
+                            break;
+                    }
+
+                    if(newContent){
+                        container.innerHTML = '';
+
+                        const children = Array.from(newContent.children);
+
+                        const clone = newContent.cloneNode(false);
+                        container.appendChild(clone);
+
+                        children.forEach((child, index) => {
+                            child.classList.add('stagger-fade');
+                            child.style.animationDelay = `${index * 100}ms`;
+                            clone.appendChild(child);
+                        })
+                    }
                 });
         });
     });
